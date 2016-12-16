@@ -1,5 +1,11 @@
 # README
 
+
+I used the framework Materializecss to give a charm in the layout leaving him responsive as well. As a test I did not care much about the weight of css and javascript processing. In case of production then simply adjust the compilers to improve performance.
+This version is a bit slow to open the first time, but it works.
+Up until.
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
@@ -19,29 +25,29 @@ Things you may want to cover:
  
 
 * Ruby version 
-  ruby 2.3.1p112 (2016-04-26 revision 54768) [x86_64-darwin16] 
+    ruby 2.3.1p112 (2016-04-26 revision 54768) [x86_64-darwin16] 
 
-* Rails version
-	4.2.4 
+* Rails version 
+    4.2.4 
 
 * Additional Gens to test
   	rspec-rails
     shoulda-matchers 
 
 * Configuration
-  Set the maximum upload size allowed in app/controllers/application_controller.rb
-  --> $system ={ max_file_size: 0.500 #in megabits  }  
+    Set the maximum upload size allowed in app/controllers/application_controller.rb
+    --> $system ={ max_file_size: 0.500 #in megabits  }  
  
 * Database
-  Sqlite3
+    Sqlite3
 
 * How to run the test suite
-  Execute rspec command or (bundle exec rspec)
+    Execute rspec command or (bundle exec rspec)
 
 * Deployment instructions
-  Not need for this project, the projected run only development and test environments. Thanks.
-* ...
+    Not need for this project, the projected run only development and test environments. Thanks.
+ 
 
 * To setup gens 
-	Execute the comand
-		bundle install 
+	  Execute the comand
+		  bundle install 
