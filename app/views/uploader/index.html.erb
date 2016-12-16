@@ -1,0 +1,73 @@
+
+<%= render "modal_uploader" %>
+
+
+<div class="white z-depth-1">
+
+ <nav>
+  <div class="nav-wrapper">
+    <a href="#!" class="brand-logo">
+      <i class="material-icons left">format_list_numbered</i>  
+      Vendas</a>
+      <ul class="right hide-on-med-and-down"> 
+        <li>
+          <a class="modal-trigger orange waves-effect waves-light btn-large" href="#modal_uploader">
+            <i class="material-icons left">file_upload</i>
+            Enviar arquivo</a></li>
+          </ul>
+
+
+          <a class="btn-floating hide-on-large-only modal-trigger btn-large waves-effect right waves-light orange" href="#modal_uploader"><i class="material-icons">add</i></a>
+        </div>
+      </nav> 
+
+
+
+      <br /> 
+
+      <div class="row center-align">
+        <div class="col s12 m4">
+
+          Itens: <%=  @summary[:amount] rescue 0    %>
+        </div>
+        <div class="col s12 m4">
+          Total <strong>R$ <%= number_with_precision((@summary[:total] rescue 0), precision: 2, separator: '.', delimiter: ',')   %>
+        </div>
+        <div class="col s12 m4">
+
+         <%= link_to(" Limpar tudo", "?clean=all") if @sales.size > 0 %>  
+       </div> 
+     </div>
+
+
+
+
+
+     <table class="bordered highlight responsive-table">
+       <thead>
+        <tr>
+         <th><%= Sale.human_attribute_name("buyer") %></th>
+         <th><%= Sale.human_attribute_name("description") %></th>
+         <th class="right-align"><%= Sale.human_attribute_name("price") %> R$</th>
+         <th class="right-align"><%= Sale.human_attribute_name("amount") %></th>
+         <th><%= Sale.human_attribute_name("address") %></th>
+         <th><%= Sale.human_attribute_name("provider") %></th>
+       </tr>
+     </thead>
+     <tbody>
+       <% @sales.each do |sale| %>
+       <tr>
+         <td><%= sale.buyer %></td>
+         <td><%= sale.description %></td>
+         <td class="right-align" >
+           <%= number_with_precision(sale.price, precision: 2, separator: '.', delimiter: ',') %> 
+         </td>
+         <td class="right-align" ><%= sale.amount %></td>
+         <td><%= sale.address %></td>
+         <td><%= sale.provider %></td>
+       </tr>
+       <% end %> 
+     </tbody>
+     </table>  
+
+ </div>

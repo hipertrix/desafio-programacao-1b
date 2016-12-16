@@ -1,0 +1,78 @@
+   
+<div id="modal_uploader" class="modal">
+  <div class="modal-content">
+
+
+    <h4>Envio de arquivo</h4>
+    <p>Por favor verifique as especificações do arquivo antes de tentar enviá-lo</p>
+
+
+
+    <%= form_for :upload, url: upload_path, html: { id: :uploader_form},  multipart: true do |f| %>
+    <div class="file-field input-field">
+      <div class="btn">
+        <span>Arquivo</span>
+        <%= f.file_field :file,  class: "validate" %> 
+      </div>
+      <div class="file-path-wrapper">
+        <%= f.text_field :file_text ,  class: "file-path validate"  %>  
+      </div>
+      <div class="center-align" id="file-error"></div>
+    </div>
+
+
+    <div class="center-align">
+      <div class="switch">
+        <label>
+          Não permitir duplicidade
+          <%= f.check_box :enable_duplicity  %>  
+          <span class="lever"></span>
+          Permitir duplicidade
+        </label>
+      </div>
+    </div>
+
+    <% end %>
+
+
+
+    <br />
+
+    <ul class="collapsible" data-collapsible="accordion">
+      <li>
+        <div class="collapsible-header"><i class="material-icons">new_releases</i>Especificações</div>
+        <div class="collapsible-body"> 
+          <p>
+
+            - O arquivo deve conter o cabeçalho na primeira linha com as seguintes colunas: 
+            Comprador, Descrição, Preço Unitário, Quantidade, Endereço, e Fornecedor nesta respectiva ordem.
+            <br />
+            - 
+            Todos os campos são obrigatório.
+            <br />
+            - 
+            Para os campos numéricos não é aceito valores menores ou igual a o (zero).
+            <br />
+            - 
+            Utilize . (ponto) como separador decimal no campo “Preço Unitário".
+            <br />
+            - 
+            O arquivo deve estar no formato txt com os dados separados por TAB.
+            <br />
+            - 
+            Caso tenha criado o arquivo em sistema Windows, verifique se a codificação do arquivo txt está em Unicode UTF-8. 
+          </p>
+        </div>
+      </li> 
+    </ul>
+
+    
+  </div>
+  
+  <div class="modal-footer">
+    
+    <a href="#!" class=" send-file-action waves-effect red waves-green white-text btn-flat">Enviar</a>   
+    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
+
+  </div>
+</div>  

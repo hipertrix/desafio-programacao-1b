@@ -1,0 +1,61 @@
+<!DOCTYPE html> 
+<html lang="pt-br">
+<head>
+  <title>DesafioProgramacao1b</title>
+  <meta http-equiv="Content-Language" content="pt-br">
+  <!--Import Google Icon Font-->
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+ 
+
+
+	  <div class="container">   
+			<%= yield %> 
+
+			<br />
+			<p class="center-align">
+			<small>By Antonio Marcos Ferreira. <a href="https://about.me/hipertrix">about.me/hipertrix</a></small>
+			</p>
+		</div>
+
+
+<script> 
+$(document).ready(function() { 
+
+	$('.modal-trigger').leanModal();  
+
+  $('.collapsible').collapsible();
+
+  <% flash.each do |name, msg| %>
+     Materialize.toast('<%= msg %>', 4000, 'rounded') ;  
+  <% end %> 
+
+  $(".send-file-action").click(function(e){
+	  e.preventDefault(); 
+	  $("#file-error").html("");
+	  // small validation for file input  
+	  var file_to_upload = $("#upload_file").val(); 
+	  if(!/(\.txt)$/i.test(file_to_upload)) {
+        $("#file-error").html('<span class="red-text">Por favor, verifique as especificações e selecione um arquivo.</span>');
+    }else{
+    	//-- arquivo ok
+    	$("#uploader_form").submit();
+	  	$("#modal_uploader").html('<div class="progress center-align"> <div class="indeterminate"></div> Processando... </div>');  
+    }    
+	}) 
+
+
+});
+</script> 
+
+</body>
+</html>
