@@ -2,7 +2,7 @@
 
 A idéia deste desafio é nos permitir avaliar melhor as habilidades de candidatos à vagas de programador, de vários níveis.
 
-Este desafio deve ser feito por você em sua casa. Gaste o tempo que você quiser, porém normalmente você não deve precisar de mais do que algumas horas.
+Este desafio deve ser feito por você em sua casa. Gaste o tempo que você quiser, porém normalmente você não deve precisar de mais do que algumas horas.  
 
 ## Instruções de entrega do desafio
 
@@ -45,3 +45,17 @@ Adicionalmente, tentaremos verificar a sua familiarização com as bibliotecas p
 ### Referência
 
 Este desafio foi baseado neste outro desafio: https://github.com/lschallenges/data-engineering
+
+
+## To run (this version)
+
+  Download from git:
+
+  1. git clone https://github.com/hipertrix/desafio-programacao-1b.git 
+  2. cd desafio-programacao-1b 
+  3. bundle install 
+  4. rake db:migrate 
+  5. rails s 
+
+  See more in README.rdoc file.
+

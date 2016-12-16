@@ -6,11 +6,17 @@ application up and running.
 Things you may want to cover:
 
 * To run
-  Exec rails s
-  Open the http://localhost:3000
-  And have fun!
 
---
+  Download from git
+
+  1. git clone https://github.com/hipertrix/desafio-programacao-1b.git 
+  2. cd desafio-programacao-1b 
+  3. bundle install 
+  4. rake db:migrate 
+  5. rails s
+
+  Open the http://localhost:3000 and have fun! 
+ 
 
 * Ruby version 
   ruby 2.3.1p112 (2016-04-26 revision 54768) [x86_64-darwin16] 
